@@ -1,0 +1,44 @@
+﻿@model PDFGenerator.Models.ListSample
+
+@{
+    ViewData["Title"] = "Daftar Sample";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm rounded">
+        <div class="card-header bg-primary text-white">
+            <h2 class="mb-0">Daftar Sample</h2>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Nama</th>
+                        <th scope="col">Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.SampleList)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.Email</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div class="mt-4 d-flex justify-content-end gap-2">
+                <a asp-controller="Home" asp-action="PDFGenerator" class="btn btn-outline-primary" target="_blank">
+                    <i class="bi bi-file-earmark-pdf"></i> Download PDF
+                </a>
+                <a asp-controller="Home" asp-action="ExcelGenerator" class="btn btn-outline-success">
+                    <i class="bi bi-file-earmark-spreadsheet"></i> Download Excel
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Required CSS: Bootstrap and Bootstrap Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auUHgOeP1HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css" rel="stylesheet" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMP1zzYkfyXc+T5o9X5b6fjz9FQvCJgJcFZFY" crossorigin="anonymous" />

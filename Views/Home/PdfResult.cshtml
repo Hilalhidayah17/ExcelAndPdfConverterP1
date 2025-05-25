@@ -1,0 +1,24 @@
+﻿@model List<PDFGenerator.Models.Sample>
+
+@{
+    Layout = "_PdfLayout";        
+    ViewData["Title"] = "Daftar Sample";
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>Nama</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Email</td>
+            </tr>
+        }
+    </tbody>
+</table>
